@@ -14,6 +14,7 @@
                     <p>By : {{ books.author }}</p>
                     <p class="card-text">{{ books.description }}</p>
                     <p>price : {{ books.price }} $ </p>
+                    <a class="btn btn-info" href="{% url 'book_update' pk=books.id %}">Update</a>
                 </div>
             </div>
         </div>
