@@ -2,7 +2,7 @@
 {% load crispy_forms_tags %}
 
 {% block title %}
-    Book Delete {{ book.title }}
+    حذف کتاب {{ book.title }}
 {% endblock %}
 
 {% block content %}
@@ -10,9 +10,9 @@
     <div class="mt-3 p-4 card shadow">
     <form class="mt-3" action="" method="post">
         {% csrf_token %}
-        <h1>Delete book {{ book.title }}</h1>
-        <p>are you sure delete this book?</p>
-        <button class="btn btn-danger" type="submit">Delete</button>
+        <h1>حذف  {{ book.title }}</h1>
+        <p>ایا اطمینان دارید حذف کنید؟</p>
+        <button class="btn btn-danger" type="submit">حذف</button>
     </form>
     </div>
 
