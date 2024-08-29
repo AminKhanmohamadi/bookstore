@@ -10,9 +10,10 @@
     	<div class="col-sm-8 mb-2 ">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">{{ books.title }}</h5>
-                    <p>By : {{ books.author }}</p>
-                    <p class="card-text">{{ books.description }}</p>
+                    <h5 class="card-title">{{ books.title|capfirst }}</h5>
+                    <p><b>By :</b> <u>{{ books.author|capfirst }}</u></p>
+                    <h6>Description :</h6>
+                    <p class="card-text">{{ books.description|linebreaks }} </p>
                     <p>price : {{ books.price }} $ </p>
                     <a class="btn btn-info" href="{% url 'book_update' pk=books.id %}">Update</a>
                     <a class="btn btn-danger" href="{% url 'book_delete' pk=books.id %}">Delete</a>
