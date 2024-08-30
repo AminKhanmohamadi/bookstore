@@ -4,11 +4,13 @@ from django.contrib.auth import get_user_model
 # Create your models here.
 
 class Book (models.Model):
+    user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
     author = models.CharField(max_length=200)
     description = models.TextField()
     price = models.DecimalField(max_digits=5 , decimal_places=2)
     cover = models.ImageField(upload_to="covers/" , blank=True)
+
 
     
     def __str__(self):
