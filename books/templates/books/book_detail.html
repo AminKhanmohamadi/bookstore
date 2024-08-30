@@ -23,9 +23,14 @@
                             <h1>{{ books.title }}</h1>
                             <h5 class="small my-1"><span class="text-muted">نویسنده: </span>{{ books.author }}</h5>
                             <h5 class="small my-1"><span class="text-muted">ایجاد کننده: </span>{{ books.user.username }}</h5>
-                            <a href="{% url 'book_update' books.id %}">ویرایش</a>
-                            <span> | </span>
-                            <a href="{% url 'book_delete' books.id %}">حذف</a>
+
+                            {% if books.user == user %}
+                                <a href="{% url 'book_update' books.id %}">ویرایش</a>
+                                <span> | </span>
+                                <a href="{% url 'book_delete' books.id %}">حذف</a>
+                            {% endif %}
+
+
                         </div>
                         <div class="col-xs-12 col-md-3 d-flex flex-column">
                             <h3 class="align-self-center pt-2 text-muted align-self-md-end">
